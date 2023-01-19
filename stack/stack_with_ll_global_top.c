@@ -6,6 +6,7 @@ struct Node
     int data;
     struct Node *next;
 };
+struct Node *top = NULL;
 
 void traversal(struct Node *ptr)
 {
@@ -24,9 +25,10 @@ int isEmpty(struct Node *top)
         return 1;
     }
 
-    else{
+    else
+    {
         return 0;
-        }
+    }
 }
 
 int isFull(struct Node *top)
@@ -37,8 +39,10 @@ int isFull(struct Node *top)
     {
         return 1;
     }
-    else{
-        return 0;}
+    else
+    {
+        return 0;
+    }
 }
 
 struct Node *push(struct Node *top, int x)
@@ -51,15 +55,15 @@ struct Node *push(struct Node *top, int x)
     {
         struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
         ptr->data = x;
-        ptr->next=top;
+        ptr->next = top;
         top = ptr;
         return top;
     }
 }
 
-int pop(struct Node ** top)
+int pop(struct Node* tp)
 {
-    if (isEmpty(*top))
+    if (isEmpty(tp))
     {
         printf("Stack Underflow\n");
     }
@@ -67,19 +71,33 @@ int pop(struct Node ** top)
     else
     {
 
-        struct Node *n = *top;
-        *top = (*top)->next;
+        struct Node *n = tp;
+        top = (tp)->next;
         int x = n->data;
         free(n);
         return x;
     }
 }
 
+int peek(int position){
+    struct Node *ptr=top;
+    for(int i=0;(i<position-1&&ptr!=NULL);i++){
+        ptr=ptr->next;
+    }
 
+    if(ptr!=NULL){
+        return ptr->data;
+    }
+    else{
+        return -1;
+    }
+
+
+}
 
 int main()
 {
-    struct Node *top = NULL;
+    
     top = push(top, 78);
     top = push(top, 7);
     top = push(top, 6);
@@ -88,11 +106,16 @@ int main()
     traversal(top);
     printf("\n");
 
-    int elem = pop(&top);
+    int elem = pop(top);
     printf("Poped element is: %d\n", elem);
     // int elem2 = pop(&top);
-    traversal(top);
-    
+    // traversal(top);
+
+    printf("here onwards the peek function is being executed\n");
+
+    for(int i=1;i<=4;i++){
+        printf(" value of position %d\n",i,peek(i));
+    }
 
     return 0;
 }
