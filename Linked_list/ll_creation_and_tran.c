@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct Node{
+struct ListNode{
     int data;
-    struct Node *next;
+    struct ListNode *next;
 };
 
-void Display(struct Node* ptr){
+void Display(struct ListNode* ptr){
 
     while (ptr){
         printf("%d ",ptr->data);
@@ -16,10 +16,10 @@ void Display(struct Node* ptr){
 }
 
 int main(){
-    struct Node *head = (struct Node *)(malloc(sizeof(struct Node))) ;
-    struct Node *second = (struct Node *)(malloc(sizeof(struct Node)));
-    struct Node *third = (struct Node *)(malloc(sizeof(struct Node)));
-    struct Node *fourth = (struct Node *)(malloc(sizeof(struct Node)));
+    struct ListNode *head = (struct ListNode *)(malloc(sizeof(struct ListNode))) ;
+    struct ListNode *second = (struct ListNode *)(malloc(sizeof(struct ListNode)));
+    struct ListNode *third = (struct ListNode *)(malloc(sizeof(struct ListNode)));
+    struct ListNode *fourth = (struct ListNode *)(malloc(sizeof(struct ListNode)));
     
     head->data=7;
     head->next=second;

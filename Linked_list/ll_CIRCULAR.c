@@ -2,15 +2,15 @@
 #include<stdlib.h>
 
 
-struct Node
+struct ListNode
 {
 
     int data;
-    struct Node *next;
+    struct ListNode *next;
 };
 
-void travesal(struct Node* head){
-    struct Node *p=head;
+void travesal(struct ListNode* head){
+    struct ListNode *p=head;
     do{
         printf("%d ",p->data);
         
@@ -20,9 +20,9 @@ void travesal(struct Node* head){
     
 }
 
-struct Node* ins_first(struct Node* head,int data){
-    struct Node *p=head->next;
-    struct Node* ptr= (struct Node*)(malloc(sizeof(struct Node)));
+struct ListNode* ins_first(struct ListNode* head,int data){
+    struct ListNode *p=head->next;
+    struct ListNode* ptr= (struct ListNode*)(malloc(sizeof(struct ListNode)));
     ptr->data=data;
      while (p->next != head){
         p=p->next;
@@ -37,16 +37,16 @@ struct Node* ins_first(struct Node* head,int data){
 
 int main()
 {
-    struct Node *head;
-    struct Node *second;
-    struct Node *third;
-    struct Node *fourth;
+    struct ListNode *head;
+    struct ListNode *second;
+    struct ListNode *third;
+    struct ListNode *fourth;
 
     // Allocate memory for nodes in the linked list in Heap
-    head = (struct Node *)malloc(sizeof(struct Node));
-    second = (struct Node *)malloc(sizeof(struct Node));
-    third = (struct Node *)malloc(sizeof(struct Node));
-    fourth = (struct Node *)malloc(sizeof(struct Node));
+    head = (struct ListNode *)malloc(sizeof(struct ListNode));
+    second = (struct ListNode *)malloc(sizeof(struct ListNode));
+    third = (struct ListNode *)malloc(sizeof(struct ListNode));
+    fourth = (struct ListNode *)malloc(sizeof(struct ListNode));
 
     // Link first and second nodes
     head->data = 4;

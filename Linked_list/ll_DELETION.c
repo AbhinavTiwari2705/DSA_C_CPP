@@ -1,16 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct Node
+struct ListNode
 {
     int data;
-    struct Node *next;
+    struct ListNode *next;
 };
 // case 1 Deleting the first node 
 // -> Time complexity:  O(1)
 
-struct Node * del_first(struct Node *head){
-    struct Node* ptr=head;
+struct ListNode * del_first(struct ListNode *head){
+    struct ListNode* ptr=head;
     head=head->next;
 
     free(ptr);
@@ -18,7 +18,7 @@ struct Node * del_first(struct Node *head){
 
 }
 
-void traversal(struct Node *ptr)
+void traversal(struct ListNode *ptr)
 {
 
     while (ptr != NULL)
@@ -31,10 +31,10 @@ void traversal(struct Node *ptr)
 // Deleting a node in between
 // ->Time complexity : O(n)
  
-struct Node* del_btw(struct Node *head,int index){
-    struct Node *p=head;
+struct ListNode* del_btw(struct ListNode *head,int index){
+    struct ListNode *p=head;
     
-    struct Node *q=head->next;
+    struct ListNode *q=head->next;
 
     for (int i = 0; i < index-1; i++)
     {
@@ -51,10 +51,10 @@ struct Node* del_btw(struct Node *head,int index){
 // ->Time complexity : O(n)
 
 
-struct Node *del_last(struct Node *head)
+struct ListNode *del_last(struct ListNode *head)
 {
-    struct Node *p=head;
-    struct Node *q=head->next;
+    struct ListNode *p=head;
+    struct ListNode *q=head->next;
 
     while(q->next!=NULL){
         p=p->next;
@@ -70,9 +70,9 @@ struct Node *del_last(struct Node *head)
 // Deleting the element with a given value from the linked list
 // ->Time complexity : O(n)
 
-struct Node * del_val(struct Node *head,int value){
-    struct Node *p = head;
-    struct Node *q = head->next;
+struct ListNode * del_val(struct ListNode *head,int value){
+    struct ListNode *p = head;
+    struct ListNode *q = head->next;
 
     while (q->data != value)
     {
@@ -88,12 +88,12 @@ struct Node * del_val(struct Node *head,int value){
 int main()
 {
 
-    struct Node *head = (struct Node *)(malloc(sizeof(struct Node)));
+    struct ListNode *head = (struct ListNode *)(malloc(sizeof(struct ListNode)));
 
-    struct Node *second = (struct Node *)(malloc(sizeof(struct Node)));
-    struct Node *third = (struct Node *)(malloc(sizeof(struct Node)));
-    struct Node *fourth = (struct Node *)(malloc(sizeof(struct Node)));
-    struct Node *fifth = (struct Node *)(malloc(sizeof(struct Node)));
+    struct ListNode *second = (struct ListNode *)(malloc(sizeof(struct ListNode)));
+    struct ListNode *third = (struct ListNode *)(malloc(sizeof(struct ListNode)));
+    struct ListNode *fourth = (struct ListNode *)(malloc(sizeof(struct ListNode)));
+    struct ListNode *fifth = (struct ListNode *)(malloc(sizeof(struct ListNode)));
 
     head->data = 7;
     head->next = second;

@@ -1,15 +1,15 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct Node
+struct ListNode
 {
     int data;
-    struct Node *next;
-    struct Node *prev;
+    struct ListNode *next;
+    struct ListNode *prev;
 };
 
-void traversal(struct Node* head){
-    struct Node* ptr = head;
+void traversal(struct ListNode* head){
+    struct ListNode* ptr = head;
     while(ptr != NULL ){
         printf("%d ",ptr->data);
         ptr=ptr->next;
@@ -20,12 +20,12 @@ void traversal(struct Node* head){
 
 int main()
 {
-    struct Node *head = (struct Node *)(malloc(sizeof(struct Node)));
+    struct ListNode *head = (struct ListNode *)(malloc(sizeof(struct ListNode)));
 
-    struct Node *second = (struct Node *)(malloc(sizeof(struct Node)));
-    struct Node *third = (struct Node *)(malloc(sizeof(struct Node)));
-    struct Node *fourth = (struct Node *)(malloc(sizeof(struct Node)));
-    struct Node *fifth = (struct Node *)(malloc(sizeof(struct Node)));
+    struct ListNode *second = (struct ListNode *)(malloc(sizeof(struct ListNode)));
+    struct ListNode *third = (struct ListNode *)(malloc(sizeof(struct ListNode)));
+    struct ListNode *fourth = (struct ListNode *)(malloc(sizeof(struct ListNode)));
+    struct ListNode *fifth = (struct ListNode *)(malloc(sizeof(struct ListNode)));
 
     head->data = 7;
     head->next = second;

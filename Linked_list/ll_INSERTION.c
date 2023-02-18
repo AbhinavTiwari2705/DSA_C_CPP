@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct Node{
+struct ListNode{
     int data;
-    struct Node * next;
+    struct ListNode * next;
 };
 
-void traversal(struct Node* ptr){
+void traversal(struct ListNode* ptr){
 
     while(ptr != NULL){
         printf("%d ",ptr->data);
@@ -17,8 +17,8 @@ void traversal(struct Node* ptr){
 // case 01  Inserting at the beginning        
     // -> Time complexity:  O(1)
 
-struct Node* ins_at_beginning(struct Node* head,int data){
-    struct Node* ptr=(struct Node*)(malloc(sizeof(struct Node*)));
+struct ListNode* ins_at_beginning(struct ListNode* head,int data){
+    struct ListNode* ptr=(struct ListNode*)(malloc(sizeof(struct ListNode*)));
     ptr->data=data;
     ptr->next=head;
     return ptr;
@@ -29,9 +29,9 @@ struct Node* ins_at_beginning(struct Node* head,int data){
 // Case-02 Inserting in between->
 // Time complexity : O(n)
 
-struct Node* ins_btw(struct Node* head,int index,int data){
-    struct Node * ptr =(struct Node*)(malloc(sizeof(struct Node*)));
-    struct  Node * p = head;
+struct ListNode* ins_btw(struct ListNode* head,int index,int data){
+    struct ListNode * ptr =(struct ListNode*)(malloc(sizeof(struct ListNode*)));
+    struct  ListNode * p = head;
     int i=0;
 
     while(i!=index-1){
@@ -52,8 +52,8 @@ struct Node* ins_btw(struct Node* head,int index,int data){
 
 // case 3 Inserting at the end
 // ->Time complexity : O(n)
-struct Node * ins_after_node(struct Node* head,struct Node *prevNode,int data){
-    struct Node * ptr=(struct Node *)malloc(sizeof(struct Node));
+struct ListNode * ins_after_node(struct ListNode* head,struct ListNode *prevNode,int data){
+    struct ListNode * ptr=(struct ListNode *)malloc(sizeof(struct ListNode));
     ptr->data=data;
 
     ptr->next=prevNode->next;
@@ -67,12 +67,12 @@ struct Node * ins_after_node(struct Node* head,struct Node *prevNode,int data){
 // Inserting at the end 
 // -> Time complexity:  O(n)
 
-struct Node *ins_at_end(struct Node *head,  int data)
+struct ListNode *ins_at_end(struct ListNode *head,  int data)
 {
-    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    struct ListNode *ptr = (struct ListNode *)malloc(sizeof(struct ListNode));
     ptr->data = data;
 
-    struct Node* p=head;
+    struct ListNode* p=head;
      while(p->next!=NULL){
         p=p->next;
      }
@@ -87,12 +87,12 @@ struct Node *ins_at_end(struct Node *head,  int data)
 
 int main()
 {
-    struct Node * head=(struct Node*)(malloc(sizeof(struct Node)));
+    struct ListNode * head=(struct ListNode*)(malloc(sizeof(struct ListNode)));
     
-    struct Node * second=(struct Node*)(malloc(sizeof(struct Node)));
-    struct Node * third=(struct Node*)(malloc(sizeof(struct Node)));
-    struct Node * fourth=(struct Node*)(malloc(sizeof(struct Node)));
-    struct Node * fifth=(struct Node*)(malloc(sizeof(struct Node)));
+    struct ListNode * second=(struct ListNode*)(malloc(sizeof(struct ListNode)));
+    struct ListNode * third=(struct ListNode*)(malloc(sizeof(struct ListNode)));
+    struct ListNode * fourth=(struct ListNode*)(malloc(sizeof(struct ListNode)));
+    struct ListNode * fifth=(struct ListNode*)(malloc(sizeof(struct ListNode)));
 
     head->data=7;
     head->next=second;
